@@ -1,8 +1,8 @@
 {
   "context": {
     "applicationName": "todo-app",
-    "region": "eu-central-1",
-    "accountId": "221875718260",
+    "region": "us-west-2",
+    "accountId": "914623859084",
     "dockerRepositoryName": "todo-app",
     "dockerImageTag": "DYNAMICALLY_OVERRIDDEN_BY_WORKFLOW",
     "applicationUrl": "https://app.stratospheric.dev",
@@ -14,7 +14,7 @@
     "canaryUserPassword": "SECRET_OVERRIDDEN_BY_WORKFLOW",
     "confirmationEmail": "info@stratospheric.dev",
     "applicationDomain": "app.stratospheric.dev",
-    "sslCertificateArn": "arn:aws:acm:eu-central-1:221875718260:certificate/8d92169c-ea74-4086-b407-b951429ac2b1",
+    "sslCertificateArn": "arn:aws:acm:us-west-2:914623859084:certificate/8d92169c-ea74-4086-b407-b951429ac2b1",
     "hostedZoneDomain": "stratospheric.dev",
     "githubToken": "SECRET_OVERRIDDEN_BY_WORKFLOW"
   }
