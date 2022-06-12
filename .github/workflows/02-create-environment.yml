@@ -11,9 +11,17 @@ on:
   workflow_dispatch:
     inputs:
       default_region:
-        description: 'The name of the environment to create.'
+        description: 'The name of the region.'
         required: true
         default: 'us-west-2'
+      access_key_id:
+        description: 'The access key id.'
+        required: true
+        default: 'change it'
+      secret_access_key:
+        description: 'The secret access id.'
+        required: true
+        default: 'change it'
       environmentName:
         description: 'The name of the environment to create.'
         required: true
@@ -42,5 +50,7 @@ jobs:
         working-directory: cdk
         run: |
           AWS_DEFAULT_REGION=${{ github.event.inputs.default_region }}
+          AWS_ACCESS_KEY_ID=${{ github.event.inputs.access_key_id }}
+          AWS_SECRET_ACCESS_KEY=${{ github.event.inputs.secret_access_key }}
           echo $AWS_DEFAULT_REGION
           npm run network:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
