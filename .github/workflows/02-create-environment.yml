@@ -10,6 +10,10 @@ env:
 on:
   workflow_dispatch:
     inputs:
+      default_region:
+        description: 'The name of the environment to create.'
+        required: true
+        default: 'us-west-2'
       environmentName:
         description: 'The name of the environment to create.'
         required: true
@@ -37,6 +41,6 @@ jobs:
       - name: Deploy network stack
         working-directory: cdk
         run: |
-          echo "The GitHub Action Secret will be masked:  "
-          echo ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_DEFAULT_REGION=${{ github.event.inputs.default_region }}
+          echo $AWS_DEFAULT_REGION
           npm run network:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
