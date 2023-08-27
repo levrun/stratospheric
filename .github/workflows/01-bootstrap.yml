@@ -38,4 +38,4 @@ jobs:
 
       - name: Deploy Docker registry
         working-directory: cdk
-        run: npm run repository:deploy
+        run: npm run repository:destroy
